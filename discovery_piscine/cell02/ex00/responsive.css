@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse; /* Colapsa as bordas da tab */
+        table-layout: fixed; /* para incolhimento; */
+    }
+
+td {
+    font-size: 3vw; /* viewport width - texto cresce ou dim auto */
+    border: 1px solid black;
+    padding-left: 1vw; /* proporcional a tela - área da tela que o navegador usa para mostrar a página web */
+    text-align: center;
+    }
+
+.tb1 {
+    text-align: center;
+    background-color: slateblue;
+    }
+
+.tb2 {
+    text-align: center;
+    background-color: springgreen;
+    }
+
+@media (max-width: 500px) { /*regras condicionais para disposivos e no caso telas muito altas ou estreita*/
+    td {
+    font-size: 5vw;
+       }
+}
+
+@media (max-height: 400px) {
+    td {
+    font-size: 4vh; /* ajusta tamanho do texto verticalmente */
+        }
+}

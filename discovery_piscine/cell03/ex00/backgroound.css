@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    height: 100vh; /* ocupa 100% da tela*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.btn {
+    padding: 15px 25px; /* espaco do botao altura e larg*/
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}

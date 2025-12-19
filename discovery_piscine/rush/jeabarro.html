@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeanlezy CV</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    body { 
+        margin:0;
+        background:#121212;
+        color:#eee;
+        font-family: Arial, sans-serif;
+    }
+    /* barra de navegacao*/
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #1e1e1e;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }   
+
+    nav .links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav .links a {
+        color: #eee;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    nav .links a:hover { background: #333; }
+
+    nav .social {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav .social a {
+        color: #fff;
+        font-size: 22px;
+        padding: 5px;
+        transition: 0.3s;
+    }
+
+    nav .social a:hover { color: #a2c1f3; }
+
+    section {
+        padding: 100px 20px 50px;
+        min-height: 100vh;
+    }
+
+    h2 { margin-top: 0; text-align: center; }
+
+    /* Home Section */
+    #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                    url(https://i.pinimg.com/originals/d4/18/e0/d418e0ff77be2cc891e08727a9b31a7d.gif) no-repeat center center/cover;
+    }
+
+    #home img {
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        object-fit:cover;
+        box-shadow:0 4px 10px rgba(0,0,0,.4);
+        margin-bottom:15px;
+    }
+
+    #home .social-links {
+        display:flex; 
+        gap:25px; 
+        margin-top:15px;
+    }
+
+    #home .social-links a { color:#fff; font-size:28px; }
+
+    /* About Section */
+    #sobre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 30vh;
+        flex-direction: column;
+    }
+
+    #sobre p {
+        background: #1e1e1e;
+        padding: 40px 30px;
+        border-radius: 15px;
+        max-width: 800px;
+        line-height: 1.6;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Experience Section */
+    #exp ul {
+        list-style: none;
+        padding: 0;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #exp li {
+        background: #1e1e1e;
+        padding: 25px 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        line-height: 1.6;
+    }
+
+    #exp li strong { color: #51ff00; font-size: 1.1rem; }
+    #exp li em { color: #aaa; font-size: 0.9rem; display: block; margin: 5px 0 10px; }
+
+    /* Skills Section */
+    #skills {
+        text-align: center;
+        padding: 50px 20px;
+        min-height: 50vh;
+    }
+
+    #skills h2 { color: #ffffff; margin-bottom: 20px; }
+
+    .skill-card {
+        display: inline-block;
+        vertical-align: top;
+        background: #1e1e1e;
+        color: #eee;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 220px;
+        text-align: left;
+    }
+
+    .skill-card h3 { color: #51ff00; margin-bottom: 8px; font-size: 1.1rem; }
+    .skill-card p { margin: 0; font-size: 0.9rem; line-height: 1.4; }
+
+    /* Contact Section */
+    #contato {
+        padding: 30px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        min-height: 30vh;
+    }
+
+    .contact-info {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    }
+
+    .contact-item {
+        display:flex;
+        align-items:flex-start;
+        gap:15px;
+        flex:1 1 250px;
+    }
+
+    .contact-item .icon { font-size:24px; color:#a2c1f3; }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="links">
+        <a href="#home">Home</a>
+        <a href="#sobre">Resume</a>
+        <a href="#exp">Experience</a>
+        <a href="#contato">Contact</a>
+    </div>
+    <div class="social">
+        <a href="https://instagram.com/jeanlezy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/jeanlezy" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/jeanlezy" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <img src="https://geo-media.beatport.com/image_size/590x404/d3f718d6-127d-4fde-b06c-8737a7266911.jpg" alt="Jeanlezy">
+    <h2>Jeanlezy Barroso Sousa</h2>
+    <p>Mushroom Hunter</p>
+    <div class="social-links">
+        <a href="https://instagram.com/jeanlezy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/jeanlezy" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/jeanlezy" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+</section>
+<hr>
+
+<!-- ABOUT -->
+<section id="sobre">
+    <h2>Resume</h2>
+    <p id="typewriter"></p>
+</section>
+<hr>
+
+<!-- EXPERIENCE -->
+<section id="exp">
+    <h2>Experience</h2>
+    <ul>
+        <li>
+            <strong>Senior Mushroom Hunter & Field Researcher</strong><br>
+            <em>2020 - Present</em><br>
+            Highly experienced mushroom hunter with deep expertise in mycology, 
+            ecosystem analysis, and ancestral knowledge. Proven ability to identify 
+            rare and high-risk species, lead expeditions in remote environments, 
+            and mentor junior hunters. Recognized for advanced environmental awareness, 
+            ethical harvesting, and contribution to research and knowledge preservation.
+        </li>
+        <li>
+            <strong>Mid-level Mushroom Hunter</strong><br>
+            <em>2015 - 2020</em><br>
+            Mid-level mushroom hunter with solid experience in field exploration across 
+            diverse ecosystems, including forests and volcanic regions. Skilled in identifying 
+            a wide range of edible and medicinal species, applying sustainable harvesting 
+            techniques, and documenting findings. Capable of planning expeditions independently 
+            and interpreting environmental indicators.
+        </li>
+        <li>
+            <strong>Junior Field Researcher</strong><br>
+            <em>2012 - 2015</em><br>
+            Early-stage mushroom hunter with foundational knowledge of fungi identification 
+            and basic ecological principles. Experienced in assisted field exploration, 
+            safe handling practices, and documentation of common species. Demonstrates strong 
+            curiosity, respect for nature, and willingness to learn from more experienced 
+            hunters.
+        </li>
+    </ul>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-card">
+        <h3>Species Identification</h3>
+        <p>Identify magical and non-magical mushrooms with accuracy.</p>
+    </div>
+    <div class="skill-card">
+        <h3>Sustainable Harvesting</h3>
+        <p>Harvest mushrooms ethically without harming the environment.</p>
+    </div>
+    <div class="skill-card">
+        <h3>Environmental Awareness</h3>
+        <p>Understand soil, climate, and natural signs.</p>
+    </div>
+    <div class="skill-card">
+        <h3>Ancestral & Magical Knowledge</h3>
+        <p>Apply folklore and traditional knowledge in mushroom hunting.</p>
+    </div>
+</section>
+<hr>
+
+<!-- CONTACT -->
+<section id="contato">
+    <h2>Contact</h2><br>
+    <div class="contact-info">
+        <div class="contact-item">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><strong>Address</strong><br>6242 Neverland, Porto, PT 42424-424</div>
+        </div>
+        <div class="contact-item">
+            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+            <div><strong>Phone</strong><br>+42 (624) 4242 - 4242</div>
+        </div>
+        <div class="contact-item">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div><strong>Email</strong><br>jeabarro@student.42porto.com</div>
+        </div>
+    </div>
+</section>
+
+<!-- RETURN BUTTON -->
+<div style="text-align:center; margin:30px 0;">
+    <a href="index.html" style="
+        padding: 10px 25px;
+        background:#1e1e1e;
+        color:#51ff00;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+        transition:0.3s;
+    ">Return to Selection</a>
+</div>
+
+<script>
+/* Smooth scroll */
+$("nav a").click(function(e){ /* seleciona os links da barra de nav e add evento de clicl*/
+    e.preventDefault(); /*  evita pular direto para ancora*/
+    let target = $(this).attr("href"); /* pega o valor do atributo do url clickado*/
+    
+    if(target.startsWith("#")) { /* verifica se link, e link interno comecado com #*/
+        $("html, body").animate({ /* anima rolagem*/
+            scrollTop: $(target).offset().top - 80 /* ajusta pra nao ficar atra do menu fixo*/
+        }, 300);
+    }
+});
+
+/* Typewriter effect */
+const aboutText = `Born among dormant volcanoes and moss-covered forests in Iceland,
+Jeanlezy developed an early and deep connection with nature and its hidden forces.
+
+Growing up in remote villages where folklore blends naturally with reality,
+he learned to read the subtle signs of the land, the weather, and the life that
+thrives in extreme environments.
+
+It was in this landscape that his journey as a magical mushroom hunter began,
+exploring lava fields, misty valleys, and boreal forests in search of rare and
+ancestral species.
+
+More than a practice, mushroom hunting became a philosophy of life:
+observing patiently, respecting natural cycles, and understanding that true
+knowledge comes from direct experience with the earth.`;
+
+let i = 0, started = false, speed = 25; /*started: comece so uma vez */
+    $(window).on("scroll", function(){ /* add evento da rolagem*/
+
+    const trigger = $("#sobre").offset().top - window.innerHeight + 100; /*Calcula a posição da rolagem em que o efeito deve começar:*/
+    if(!started && $(window).scrollTop() > trigger){ /* se o efeito ainda nao comecou*/
+        started = true; /* marca o efeito comecou, pra nao rodar novamente*/
+        typeWriter();
+    }
+});
+
+function typeWriter(){
+    if(i < aboutText.length){ /* verifica se ainda tem carac pra digitar*/
+        document.getElementById("typewriter").innerHTML += /* adiciona o próximo caractere ao elemento com id typewriter.*/
+            aboutText.charAt(i)==="\n" ? "<br>" : aboutText.charAt(i); /* Se o caractere for \n, adiciona <br> (quebra de linha no HTML).
+                                                                        caso contrário, adiciona a letra normalmente.*/
+        i++;
+        setTimeout(typeWriter, speed); /*Chama a função recursivamente depois de speed milissegundos,
+                                    criando o efeito de digitação letra por letra.*/
+    }
+}
+</script>
+
+</body>
+</html>

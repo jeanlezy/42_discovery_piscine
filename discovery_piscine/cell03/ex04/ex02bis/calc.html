@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="left"> <!-- Primeiro input-->
+    <select id="operator">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+
+    <input type="text" id="right"> <!-- Segundo input-->
+    <input type="submit" value="Try me" id="submit"> <!-- botao calculo -->
+
+<script>
+    $(function() { /* so executa apos pagina carregar*/
+        function isPositiveInteger(v){ 
+            return /^\d+$/.test(v); /* ^ = verifica comeca no primeiro char da string
+                                     \d = representa qualquer num 0 - 9
+                                    + = string tenha pelo menos um num e infinitos num
+                                    $ termine exatamento no ultimo char */
+        }
+
+    $("#submit").click(function() { /* seleciona botao pela id*/
+        let left = $("#left").val(); /* obtem valores digitados */
+        let right = $("#right").val();
+        
+        if (!isPositiveInteger(left) || !isPositiveInteger(right)) { /* senao for valor inteiro pos = mostra erro e sai*/
+            alert("Error :("); 
+            return; 
+        }
+
+        let a = parseInt(left), /* parseInt = converte texto em num*/
+            b = parseInt(right), 
+            op = $("#operator").val(), /* recebe o op*/
+            result; /* guarda o valor*/
+
+        if ((op === "/" || op === "%") && b===0) { /* verifica se / e % e segundo num 0 */
+            alert("It's over 9000!"); 
+            console.log("It's over 9000!"); 
+            return; 
+        }
+
+        switch(op){
+            case "+": result = a + b; 
+                break;
+            case "-": result = a - b; 
+                break;
+            case "*": result = a * b; 
+                break;
+            case "/": result = a / b; 
+                break;
+            case "%": result = a % b; 
+                break;
+        }
+        alert(result); 
+        console.log(result);
+    });
+
+    setInterval(function(){ /* a cada 30s mostra alerta */
+        alert("Please, use me..."); 
+    },30000); /* 30000ms*/
+});
+</script>
+</body>
+</html>

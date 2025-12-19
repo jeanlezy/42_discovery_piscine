@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.card {
+    width: 300px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+table { /* tabela invisivel*/
+    margin: auto; /*para centralizar*/
+    border-collapse: collapse;
+}
+
+td { /* cada celula da tab*/
+    padding: 5px;
+}
+
+.profile-img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.login {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.description {
+    color: gray;
+}
+
+.description2 {
+    color: black;
+}
+
+.socials img {
+    width: 30px;
+    margin: 5px;
+}
+
+.socials a { /* remove linha embaixo dos links */
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border: none; /* remove borda*/
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #333;
+}

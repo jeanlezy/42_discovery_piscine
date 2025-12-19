@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-size: cover; /* cobre toda div*/
+    background-position: center;
+    background-attachment: fixed; /* imagem fica fixa enquanto scrolla*/
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 1px 5px black; /* adiciona sombra no texto*/
+}
+
+.parallax1 { background-image: url("https://images.steamusercontent.com/ugc/2058741034012526512/379E6434B473E7BE31C50525EB946D4212A8C8B3/"); }
+.parallax2 { background-image: url("https://images.wallpapersden.com/image/download/elden-ring-4k-gaming-2022_bWdna22UmZqaraWkpJRoZWVlrWZrbW0.jpg"); }
+
+.content { /*  block preto */
+    color: white;
+    padding: 150px 20px; /* cria espaco interno */
+    background-image: url("https://images.steamusercontent.com/ugc/2058741034012526512/379E6434B473E7BE31C50525EB946D4212A8C8B3/");
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed; /* mantem efeito do parallax no bloco*/
+    background-color: rgba(0,0,0,0.7);
+    background-blend-mode: darken; /* mistura imagem com preto*/
+}

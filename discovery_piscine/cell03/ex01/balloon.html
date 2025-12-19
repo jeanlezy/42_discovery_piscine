@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+
+    <style>
+        body {
+            height: 100vh; /* ocupa toda altura da tela*/
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #balloon { /* seleciona div ballon pelo id */
+            width: 200px; /* limita o balao 200x200 */
+            height: 200px;
+            background-color: red;
+            border-radius: 50%; /* to make round */
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="balloon"></div>
+
+    <script> /* start javascript*/
+        const balloon = document.getElementById("balloon"); /* select div do ballon and store in variable ballon*/
+
+        let size = 200; /* store ballon size*/
+        let colors = ["red", "green", "blue"]; /* array of colors*/
+        let colorIndex = 0; /* tracks current color pos in array*/
+
+        // Click: grow + next color
+        balloon.addEventListener("click", function () {
+            size += 10; /* ballon increment */
+
+            // Explosion
+            if (size > 420) {
+                size = 200;
+                colorIndex = 0; /* resets size and color*/
+            } else {
+                colorIndex = (colorIndex + 1) % colors.length; /* move to next color*/
+                /* 0 (Red)	    (0 + 1) % 3 = 1 % 3	 =1 (new col index)	Moves to Green */ 
+                /* 1 (Green)	(1 + 1) % 3 = 2 % 3	 =2	                Moves to Blue */
+                /* 2 (Blue)	    (2 + 1) % 3 = 3 % 3	 =0	                Resets to Red! */
+            }
+
+            balloon.style.width = size + "px"; /* updates ballon size*/
+            balloon.style.height = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex]; /* change balloon color*/
+        });
+
+        // Mouse leaves: shrink + previous color
+        balloon.addEventListener("mouseleave", function () {
+            size -= 5;
+
+            if (size < 200) {
+                size = 200;
+            } else {
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length; /* move to previous color - index positive*/
+                /*  2 (Blue)	(2 - 1 + 3) % 3 = 4 % 3	=1	Volta para Green
+                    1 (Green)	(1 - 1 + 3) % 3 = 3 % 3	=0	Volta para Red
+                    0 (Red)	    (0 - 1 + 3) % 3 = 2 % 3	=2	Salta para o final (Blue) */
+            }
+
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex];
+        });
+    </script>
+
+</body>
+</html>

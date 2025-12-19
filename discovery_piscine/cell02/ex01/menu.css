@@ -1,0 +1,55 @@
+body {
+    background-color: burlywood;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.menu { /* Responsive*/
+    max-width: 400px;
+    margin: auto; /*centraliza auto*/
+}
+.icon {
+   width: 80px;
+   height: auto;
+}
+
+.dropdownCont { /* Master */
+    position: relative; /* serve de ref para os filhos (pos: absolute filhos)*/
+    /*display: inline-block; /*permite def larg e altura, ocupa so o necessario*/
+    width: 100%; /* 100% da largura da box*/
+}
+.dropdown { /* menu oculto*/
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 100%; /*posiciona logo abaixo do botao*/
+    width: 100%; /* mesmo largura do trigger*/;
+    background: rgba(181, 241, 192, 0.8);
+    border-radius: 8px;
+    z-index: 10; /* garante que o menu fica por cima dos els */
+    transition: opacity 0.5s ease;
+}
+
+.dropdown a { /*links do menu*/
+    padding: 12px; /*espacamento interno*/
+    text-decoration: none; /*remove o sublinhado*/
+    color: white;
+    display: block; /* ocupa a largura inteira*/
+}
+
+
+.trigger { /* button trigger*/
+    width: 100%;
+    padding: 12px;
+    background: #56eb39;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer; /*curso de mao ao passar o mouse*/
+    /*font-size: 1rem; /*responsive*/
+}
+.dropdownCont:hover .dropdown{ /*abrir menu*/
+    display: flex; /*quando passa o mouse sobre container*/
+    flex-direction: column; /* links embaixo do outro*/
+    opacity: 1;
+}

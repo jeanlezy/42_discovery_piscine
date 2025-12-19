@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://i.pinimg.com/originals/c5/9a/d2/c59ad2bd4ad2fbacd04017debc679ddb.gif");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .holographic-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            gap: 50px;
+        }
+
+        .holographic-card {
+            width: 230px;
+            height: 150px;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .holographic-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(0deg,
+                    transparent,
+                    transparent 30%,
+                     rgb(134, 219, 7));
+            transform: rotate(-45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+
+        .holographic-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px greenyellow;
+        }
+
+        .holographic-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translateY(100%);
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(134, 219, 7);
+        }
+
+        .titulo {
+            color:  rgb(134, 219, 7);
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgb(134, 219, 7);
+        }
+
+        .subtitulo {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Bem-vindo!!</h1>
+    <p class="subtitulo">Escolha seu truta:</p>
+
+    <div class="holographic-container">
+        <div class="holographic-card">
+            <a href="jeabarro.html">
+                <h2>Jeabarro CV</h2>
+            </a>
+        </div>
+        <div class="holographic-card">
+            <a href="kfilho.html">
+                <h2>Kfilho CV</h2>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

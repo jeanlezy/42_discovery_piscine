@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+    <title>To Do jQuery</title> <!-- Título da página -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> <!-- Inclui jQuery -->
+
+<style>
+    body { 
+        background: #121212; 
+        font-family: Arial; 
+        color: white; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        margin: 0; 
+    }
+    
+    .box { 
+        width: 300px; 
+        background: #1e1e1e; 
+        padding: 15px; 
+        border-radius: 10px; 
+        text-align: center; 
+    } /* Box principal */
+    
+    #new { 
+        width: 100%; 
+        padding: 10px; 
+        border: 0; border-radius: 5px; 
+        background: #a2c1f3; 
+        color: white; 
+        cursor: pointer; 
+    } /* Botão novo */
+    
+    #ft_list { 
+        margin-top: 10px; 
+        max-height: 250px; 
+        overflow-y: auto; 
+    } /* Lista de tarefas */
+
+    #ft_list div { 
+        background: #2a2a2a; 
+        margin-bottom: 5px; 
+        padding: 8px; 
+        border-radius: 5px; 
+        cursor: pointer; 
+    } /* Cada tarefa */
+</style>
+</head>
+
+<body>
+    <div class="box"> <!-- Container principal -->
+    <button id="new">New</button> <!-- Botão para nova tarefa -->
+    <div id="ft_list"></div> <!-- Lista de tarefas -->
+</div>
+
+<script>
+    $(function(){ // Executa após a página carregar
+    const $list = $("#ft_list"); // Seleciona a div que conterá as tarefas
+
+    function saveTodos(){ // Função para salvar tarefas no localStorage
+        const todos = $list.children().map((i, el) => $(el).text()).get(); // Pega o texto de cada div (tarefa)
+        localStorage.setItem("todos", JSON.stringify(todos)); // Salva o array como string JSON no localStorage
+    }
+
+    function createTodo(text){ // Função para criar uma nova tarefa
+        $("<div>").text(text) // Cria uma div com o texto da tarefa
+            .click(function(){ // Ao clicar na tarefa
+                if(confirm("Do you want to delete this TO DO?")){ // Pergunta se deseja apagar
+                    $(this).remove(); // Remove do DOM
+                    saveTodos(); // Atualiza o localStorage
+                }
+            })
+            .prependTo($list); // Adiciona a tarefa no topo da lista
+    }
+
+    function loadTodos(){ // Função para carregar tarefas salvas
+        const todos = JSON.parse(localStorage.getItem("todos") || "[]"); // Pega as tarefas ou array vazio
+        todos.reverse().forEach(createTodo); // Mostra da mais recente para a mais antiga
+    }
+
+    $("#new").click(function(){ // Ao clicar no botão "New"
+        const text = prompt("Enter a new TO DO:"); // Pergunta ao usuário a nova tarefa
+        if(text && text.trim()){ // Se houver texto válido
+            createTodo(text.trim()); // Cria a tarefa
+            saveTodos(); // Salva no localStorage
+        }
+    });
+
+    loadTodos(); // Carrega tarefas ao iniciar
+});
+</script>
+</body>
+</html>

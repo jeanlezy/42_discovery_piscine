@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator</title>
+</head>
+
+<body>
+    <input type="text" id="left"> <!-- Left operand -->
+
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+<input type="text" id="right"> <!-- Right operand -->
+
+<input type="submit" value="Try me" id="submit"> <!-- Submit button-->
+
+<script>
+    const leftInput = document.getElementById("left"); /* Search element trough ID */
+    const rightInput = document.getElementById("right");
+    const operator = document.getElementById("operator");
+    const submit = document.getElementById("submit");
+
+    submit.addEventListener("click", function() { /* button click run function "try me" */
+        const left = leftInput.value; /* read user input */
+        const right = rightInput.value;
+
+        if (!isPositiveInteger(left) || !isPositiveInteger(right)) { /* check is positive left and right*/
+            alert("Error :(");
+            return;
+        }
+
+        const a = parseInt(left); /* convert string to int*/
+        const b = parseInt(right);
+        const op = operator.value; /* get the operator*/ 
+        let result; /* save calc result */
+
+        if ((op === "/" || op === "%") && b === 0) { /* check div or modulo and second number 0*/
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+        switch (op) {
+                case "+":
+                    result = a + b;
+                    break;
+                case "-":
+                    result = a - b;
+                    break;
+                case "*":
+                    result = a * b;
+                    break;
+                case "/":
+                    result = a / b;
+                    break;
+                case "%":
+                    result = a % b;
+                    break;
+            }
+            alert(result); /* show pop up alert */
+            console.log(result); /* envia valor do result para nav*/
+        });    
+
+         function isPositiveInteger(value) { /* helper funct for validation */
+            return /^\d+$/.test(value); /*^ = verifica comeca no primeiro char da string
+                                        \d = representa qualquer num 0 - 9
+                                        + = string tenha pelo menos um num e infinitos num
+                                        $ termine exatamento no ultimo char */
+        }
+
+        setInterval(function () { /* Runs repeatedly at fixed time interval. */
+            alert("Please, use me...");
+        }, 30000); /* 30000 ms */
+
+</script>    
+</body>
+</html>

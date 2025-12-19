@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+    font-family: Arial;
+}
+
+.box { /* box style */
+    width: 300px;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#new { /* button style*/
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#ft_list { /* list to do style */
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#ft_list div { /* each to do style */
+    background: #757575;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+    <div class="box">
+        <button id="new">New</button>
+        <div id="ft_list"></div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>

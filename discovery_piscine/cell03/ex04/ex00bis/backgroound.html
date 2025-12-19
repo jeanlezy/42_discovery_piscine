@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Background</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> <!-- invoke library na page 
+                                                                        para usa metodos $ -->
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.5s; /* transição suave */
+    }
+    .btn {
+        padding: 15px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+    <button class="btn">Click Here</button>
+
+    <script>
+        $(function(){ /* funcao executada quando pag termina de carregar*/
+            $(".btn").click(function(){ /* add event click a class .btn*/
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            $("body").css("background-color", `rgb(${r},${g},${b})`); /* $(body) = document.body
+                                                                          .css("background-color", valor) metodo jquery ler ou alterar
+                                                                          `template string` insere os valore rgb dentro
+                                                                          das variabeis*/
+        });
+});
+</script>
+
+</body>
+</html>
