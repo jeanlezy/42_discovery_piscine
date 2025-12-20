@@ -16,23 +16,14 @@ The program is free, in-person, and requires no prior programming experience, ma
 
 🎯 Goals
 
-Introduction to programming fundamentals
-First contact with web development
+Introduction to programming fundamentals, First contact with web development
 
 Development of:
 
-Logical thinking and problem-solving
-Learning autonomy
-Teamwork and collaboration
-Understanding the 42 methodology based on projects and peer learning
+Logical thinking and problem-solving, Learning autonomy, Teamwork and collaboration, Understanding the 42 methodology based on projects and peer learning
 
 
 🛠️ Technologies and Concepts
 
 During the Discovery Piscine, the main topics covered were:
-HTML
-CSS
-JavaScript
-Programming logic
-Project structure
-Practical problem-solving challenges
+HTML, CSS, JavaScript, Programming logic, Project structure, Practical problem-solving challenges
